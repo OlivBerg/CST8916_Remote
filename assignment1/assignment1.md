@@ -127,13 +127,38 @@ mutation{
 We would argue that GraphQL would be the slight superior system as it prevents data to be over or underfetch by the user. However, both lack mechanism to communicate in real-time.
 
 
-
-
 ## Section 2: WebSockets for Real-time Communication
 
-- Describe how WebSockets could be used to handle real-time communication in your chosen system.
+### How would WebSockets work
+WebSockets establishes a persistent bi-directional communication channel between the client and the server. This on its own already completely different form a REST and a GraphQL system. Here how this would implement in our scenario:
 
-- Discuss how WebSockets differ from REST and GraphQL in managing real-time data flow.
+#### Connection (Handshake)
+The client starts the connection to the server with an HTTP request/handshake. From that handshake the client demands a communication upgrade which proceeds the WebSocket connection over a TCP connction.
+
+#### Bi-directional data communication
+For example, when the Stock Platform gets updated data about a stock the the user is monitoring, that update is immadiately pushed to the user in a form of live graph or current live pricing. The great thing is that, the client does not need to make a new request to the server because the connection was never closed which eliminate the need to constanly refreshing the client.
+
+### WebSockets vs REST & GraphQL
+
+#### Request VS Push
+Both REST and GraphQL both fundementaly rely on requests to work which in the scenario is their downfall. Request rely on the client to constantly be reqesting for data to work which can be slow and taxing. WebSockets Lets the server push data whenever the data is ready to be pushed. This is a fundamental difference between the two.
+
+#### Connection Persistence
+REST and GraphQL both use short-lived HTTP connections meaning once the data request has been completed, the connection is done. WebSockets on the other hand, uses persistent connection, meaning the connection will be open as long as the client the server are active.
+
+#### Efficency
+Both REST and GraphQL will waste bandwidth and server resources in a real time update usage because the client is constantly requesting more updates when the data has yet to have change. WebSockets will, because of the their persistent connection, update the user on its own without the need a new request. This will dramatically reduce latency and improve user experience. 
+
+
+
+
+
+
+
+
+
+
+
 
 ## Section 3: Technology Recommendation and Justification
 
