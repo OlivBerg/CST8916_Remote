@@ -1,4 +1,4 @@
-# Assignment 1
+# Assignment 1 - Stock Market
 
 ## Q1: Explain how both REST and GraphQL could be used to handle the data requests and updates required by the system.
 
