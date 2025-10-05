@@ -2,10 +2,6 @@
 
 ## Q1: Explain how both REST and GraphQL could be used to handle the data requests and updates required by the system.
 
-- For REST, describe how different endpoints could be structured, and how requests such as GET, POST, PUT, and DELETE would manage data.
-- or GraphQL, describe how queries and mutations could handle the same data operations and how this approach differs from REST.
-- Compare the pros and cons of using REST versus GraphQL for your specific use case.
-
 ### Rest Implementation 
 #### Important Definition
 
@@ -77,22 +73,61 @@ query{
 
 ```
 mutation{
-    createStock(ticker: "AAPL", period: " daily, hourly, 15min, 5min"){ // Apple ticker symbole
+    createStock(ticker: "AAPL",companyName:"Apple", currentPrice: "199.99$" ){ // Apple ticker symbole
         ticker
-        price
-        volume
+        companyName
+        currentPrice
+        ...
+    }
+}
+```
+#### Updating/[Mutating](https://graphql.org/learn/mutations/) stock 
+
+```
+mutation{
+    updateStock(ticker: "AAPL",companyName:"Apple Inc."){ // Apple ticker symbole
+        ticker
+        companyName
+        ...
+    }
+}
+```
+
+#### Deleting/[Mutating](https://graphql.org/learn/mutations/) stock 
+
+```
+mutation{
+    deleteStock(ticker: "AAPL",companyName:"Apple", currentPrice: "199.99$" ){ // Apple ticker symbole
+        ticker
+        companyName
+        currentPrice
         ...
     }
 }
 ```
 
 
-
-
-
-
-
 ### REST VS GraphQL
+
+#### Pros of REST
+- Simple and straightforward to setup. For simple systeme rest is best.
+- REST is well-established and used widely. 
+
+#### Cons of REST
+- Over/under-Fetching
+- Real-time communication mechanism limitation
+
+#### Pros of GraphQL
+- Avoides over/under-Fetching, gets you what you need at the request stage
+
+#### Cons of GraphQL
+- Real-time communication mechanism limitation
+
+
+We would argue that GraphQL would be the slight superior system as it prevents data to be over or underfetch by the user. However, both lack mechanism to communicate in real-time.
+
+
+
 
 ## Section 2: WebSockets for Real-time Communication
 
