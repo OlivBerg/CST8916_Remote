@@ -2,16 +2,17 @@
 
 ## Q1: Explain how both REST and GraphQL could be used to handle the data requests and updates required by the system.
 
-### Rest Implementation 
+### Rest Implementation
+
 #### Important Definition
 
 **Stocks** : Ticker symbol, company name, current price... (stock representation at current time of request)
 
 **Quotes** : Timestamp, price, Volume... (Historical representation of the stock base on a period of time)
 
+#### Basic Endpoint Structure and Request
 
-#### Basic Endpoint Structure and Request 
-This a basic structure used to simulate data communication for our stock market app. These does not include all possible endpoints, but only include the basic structure to relay how such communication would be done in this scenario. 
+This is a basic structure used to simulate data communication for our stock market app. This does not include all possible endpoints, but only includes the basic structure to relay how such communication would be done in this scenario.
 
 ##### **/stocks: Base endpoint**
 
@@ -26,12 +27,13 @@ This a basic structure used to simulate data communication for our stock market 
 
 ##### **/quotes/{ticker}: View historical quotes for a particular ticker**
 
-- **GET /quotes/{ticker}:** Retrives historical data about a specific ticker. This request can be a large request as it is requesting data over a time period.
+- **GET /quotes/{ticker}:** Retrieves historical data about a specific ticker. This request can be a large request as it is requesting data over a time period.
 
 ### GraphQL Implementation
-GraphQL, as we learned in class uses a single point to handle any requests. Here are example using the our notes code snippets and GraphQL [documentation](https://graphql.org/learn/) as examples.
 
-#### Retrieving/[Query](https://graphql.org/learn/queries/)  any stocks 
+GraphQL, as we learned in class, uses a single point to handle any requests. Here are examples using the our notes code snippets and GraphQL [documentation](https://graphql.org/learn/) as examples.
+
+#### Retrieving/[Query](https://graphql.org/learn/queries/) any stocks
 
 ```
 query{
@@ -42,7 +44,8 @@ query{
     }
 }
 ```
-#### Retrieving/[Query](https://graphql.org/learn/queries/)  specific stocks  
+
+#### Retrieving/[Query](https://graphql.org/learn/queries/) specific stocks
 
 ```
 query{
@@ -57,7 +60,7 @@ query{
 }
 ```
 
-#### Retrieving/[Query](https://graphql.org/learn/queries/) stock quote 
+#### Retrieving/[Query](https://graphql.org/learn/queries/) stock quote
 
 ```
 query{
@@ -69,7 +72,8 @@ query{
     }
 }
 ```
-#### Creating/[Mutating](https://graphql.org/learn/mutations/) stock 
+
+#### Creating/[Mutating](https://graphql.org/learn/mutations/) stock
 
 ```
 mutation{
@@ -81,7 +85,8 @@ mutation{
     }
 }
 ```
-#### Updating/[Mutating](https://graphql.org/learn/mutations/) stock 
+
+#### Updating/[Mutating](https://graphql.org/learn/mutations/) stock
 
 ```
 mutation{
@@ -93,7 +98,7 @@ mutation{
 }
 ```
 
-#### Deleting/[Mutating](https://graphql.org/learn/mutations/) stock 
+#### Deleting/[Mutating](https://graphql.org/learn/mutations/) stock
 
 ```
 mutation{
@@ -106,59 +111,57 @@ mutation{
 }
 ```
 
-
 ### REST VS GraphQL
 
 #### Pros of REST
+
 - Simple and straightforward to setup. For simple systeme rest is best.
-- REST is well-established and used widely. 
+- REST is well-established and used widely.
 
 #### Cons of REST
+
 - Over/under-Fetching
 - Real-time communication mechanism limitation
 
 #### Pros of GraphQL
+
 - Avoides over/under-Fetching, gets you what you need at the request stage
+- Can use subscription for real-time (uses Websockets)
 
 #### Cons of GraphQL
+
 - Real-time communication mechanism limitation
+- Difficult to implement
 
-
-We would argue that GraphQL would be the slight superior system as it prevents data to be over or underfetch by the user. However, both lack mechanism to communicate in real-time.
-
+We would argue that GraphQL would be the slightly superior system as it prevents data from being over or underfetched by the user. However, both lack mechanisms to communicate in real-time or are not easy to implement.
 
 ## Section 2: WebSockets for Real-time Communication
 
 ### How would WebSockets work
-WebSockets establishes a persistent bi-directional communication channel between the client and the server. This on its own already completely different form a REST and a GraphQL system. Here how this would implement in our scenario:
+
+WebSockets establishes a persistent bi-directional communication channel between the client and the server. This is fundamentally different from a REST and a GraphQL system. Here’s how this would be implemented in our scenario:
 
 #### Connection (Handshake)
-The client starts the connection to the server with an HTTP request/handshake. From that handshake the client demands a communication upgrade which proceeds the WebSocket connection over a TCP connction.
+
+The client starts the connection to the server with an HTTP request/handshake. From that handshake, the client demands a communication upgrade, which proceeds the WebSocket connection over a TCP connection.
 
 #### Bi-directional data communication
-For example, when the Stock Platform gets updated data about a stock the the user is monitoring, that update is immadiately pushed to the user in a form of live graph or current live pricing. The great thing is that, the client does not need to make a new request to the server because the connection was never closed which eliminate the need to constanly refreshing the client.
+
+For example, when the Stock Platform gets updated data about a stock that the user is monitoring, that update is immediately pushed to the user in the form of a live graph or current live pricing. The great thing is that the client does not need to make a new request to the server because the connection was never closed, which eliminates the need to constantly refresh the client.
 
 ### WebSockets vs REST & GraphQL
 
 #### Request VS Push
-Both REST and GraphQL both fundementaly rely on requests to work which in the scenario is their downfall. Request rely on the client to constantly be reqesting for data to work which can be slow and taxing. WebSockets Lets the server push data whenever the data is ready to be pushed. This is a fundamental difference between the two.
+
+Both REST and GraphQL both fundementaly rely on requests to work which in the scenario is their Downfall: Request relies on the client to constantly be requesting data to work, which can be slow and taxing. WebSockets lets the server push data whenever the data is ready to be pushed. This is a fundamental difference between the two.
 
 #### Connection Persistence
-REST and GraphQL both use short-lived HTTP connections meaning once the data request has been completed, the connection is done. WebSockets on the other hand, uses persistent connection, meaning the connection will be open as long as the client the server are active.
+
+REST and GraphQL both use short-lived HTTP connections, meaning once the data request has Once completed, the connection is done. WebSockets, on the other hand, uses a persistent connection, meaning the connection will be open as long as the client and the server are active.
 
 #### Efficency
-Both REST and GraphQL will waste bandwidth and server resources in a real time update usage because the client is constantly requesting more updates when the data has yet to have change. WebSockets will, because of the their persistent connection, update the user on its own without the need a new request. This will dramatically reduce latency and improve user experience. 
 
-
-
-
-
-
-
-
-
-
-
+Both REST and GraphQL will waste bandwidth and sEver resources in a real-time update usage because the client is constantly requesting more updates when the data has yet to have changed. WebSockets will, because of their persistent connection, update the user on its own without the need for a new request. This will dramatically reduce latency and improve user experience.
 
 ## Section 3: Technology Recommendation and Justification
 
