@@ -171,3 +171,7 @@ Justify your recommendation based on your analysis in Sections 1 and 2.
 
 - Consider factors such as data complexity, real-time requirements, scalability, and ease of use for developers.
 - Explain why this combination is best suited for your use case in terms of performance, scalability, and real-time capabilities.
+
+## Contributions
+
+### Olivie Bergeron --> Answered Question 1 and 2
