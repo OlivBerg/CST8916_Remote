@@ -165,13 +165,95 @@ Both REST and GraphQL will waste bandwidth and sEver resources in a real-time up
 
 ## Section 3: Technology Recommendation and Justification
 
-Recommend which technology (or combination of technologies) you would choose for your system: REST, GraphQL, WebSockets, or a hybrid approach.
+### Our Recommendation
 
-Justify your recommendation based on your analysis in Sections 1 and 2.
+Use **GraphQL for requests and updates** and **WebSockets through GraphQL Subscriptions** for all **real-time** data.
 
-- Consider factors such as data complexity, real-time requirements, scalability, and ease of use for developers.
-- Explain why this combination is best suited for your use case in terms of performance, scalability, and real-time capabilities.
+- **GraphQL queries and mutations:** snapshot reads like current stock details and watchlists, and controlled writes like adding or removing items from a watchlist and setting alert rules.
+- **GraphQL Subscriptions over WebSockets:** continuous push of live quotes and small deltas such as price, volume, and timestamp as soon as they change.
+
+---
+
+### What GraphQL Handles: Requests and Updates
+
+GraphQL is our single request–response API for structured data. It helps avoid over-fetching and under-fetching by letting the client ask for exactly the fields it needs.
+
+- **Reads**
+  - Load a user’s watchlist and the current fields for those tickers.
+  - Get paged historical quotes to draw charts without huge one-shot payloads.
+
+- **Writes**
+  - Manage watchlists: `addToWatchlist`, `removeFromWatchlist`.
+  - Manage alert rules: `setPriceAlert`.
+  - Update user preferences, such as preferred intervals.
+
+**Example query:**
+```graphql
+query {
+  stock(ticker: "AAPL") {
+    ticker
+    companyName
+    currentPrice
+    dailyHigh
+    dailyLow
+  }
+}
+```
+### *Example (mutation):*
+
+```graphql
+mutation {
+  setPriceAlert(ticker: "AAPL", threshold: 199.50) {
+    ticker
+    threshold
+    active
+  }
+}
+```
+### What WebSockets Handle: Real-time with GraphQL Subscriptions
+
+WebSockets provide a **persistent**, bi-directional channel so the server can **push** updates immediately. Using **GraphQL Subscriptions** on top of that channel keeps real-time events aligned with the same schema and types as queries/mutations.
+
+- The client subscribes to the tickers it is viewing.
+- The server pushes small `PRICE_UPDATE` events as soon as the market data changes.
+
+### *Example (subscription):*
+```graphql
+subscription {
+  priceUpdated(ticker: "AAPL") {
+    ticker
+    price
+    volume
+    ts
+  }
+}
+```
+### Why this is best for the stock market
+
+**Low latency:**  
+Subscriptions over WebSockets remove polling. Prices appear as soon as they change, which is important for a market scenario.
+
+**Network efficiency:**  
+GraphQL returns only the fields needed for each view. Subscriptions send small deltas like price, volume, and timestamp instead of full documents, which saves bandwidth.
+
+**Throughput:**  
+One WebSocket connection can carry many subscriptions for a single user. On the server, updates for a ticker can be broadcast to all subscribers efficiently.
+
+**Scaling:**  
+- **GraphQL layer:** stateless resolvers can scale behind a load balancer.  
+- **Subscriptions layer:** WebSocket servers can scale out; subscriber registries can be shared so any node can publish updates to all interested clients.  
+- **Data access:** historical queries are paged and cache-friendly; live streams are frequent but lightweight.
+
+---
+
+### Why GraphQL Subscriptions instead of plain WebSockets
+
+- **One schema for everything:** queries, mutations, and live events share the same types and naming.
+- **Ask for only what you need:** the subscription document selects fields, so payloads stay small.
+- **Built-in filtering:** arguments on the subscription act as filters, such as `ticker: "AAPL"`.
+- **Many streams over one socket:** multiple subscriptions can share a single connection in a standard way.
 
 ## Contributions
 
 ### Olivie Bergeron --> Answered Question 1 and 2
+### Obaida Kandakji --> Answered Question 3 and Video
