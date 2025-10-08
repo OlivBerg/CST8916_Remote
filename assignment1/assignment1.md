@@ -175,3 +175,5 @@ Justify your recommendation based on your analysis in Sections 1 and 2.
 ## Contributions
 
 ### Olivie Bergeron --> Answered Question 1 and 2
+
+I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and I used AI to summaries my notes taken in class/from the slides. My AI application was limited to the above. No AI was used to directly answer any of the question above.
