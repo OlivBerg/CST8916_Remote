@@ -258,4 +258,4 @@ One WebSocket connection can carry many subscriptions for a single user. On the 
 ### Olivie Bergeron --> Answered Question 1 and 2
 I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and I used AI to summaries my notes taken in class/from the slides. My AI application was limited to the above. No AI was used to directly answer any of the question above.
 ### Obaida Kandakji --> Answered Question 3 and Video
-I used AI for the formatting and structuring of my markdown code. Solutions come from class notes and google searches for better understanding.
+I used AI for the formatting and structuring of my markdown code. Solutions come from class notes and Codezup graphql and websockets article for better understanding of material.
