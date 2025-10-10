@@ -176,7 +176,7 @@ Use **GraphQL for requests and updates** and **WebSockets through GraphQL Subscr
 
 ### What GraphQL Handles: Requests and Updates
 
-GraphQL is our single request–response API for structured data. It helps avoid over-fetching and under-fetching by letting the client ask for exactly the fields it needs.
+GraphQL is our single request response API for structured data. It helps avoid over-fetching and under-fetching by letting the client ask for exactly the fields it needs.
 
 - **Reads**
   - Load a user’s watchlist and the current fields for those tickers.
@@ -256,4 +256,5 @@ One WebSocket connection can carry many subscriptions for a single user. On the 
 ## Contributions
 
 ### Olivie Bergeron --> Answered Question 1 and 2
+I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and I used AI to summaries my notes taken in class/from the slides. My AI application was limited to the above. No AI was used to directly answer any of the question above.
 ### Obaida Kandakji --> Answered Question 3 and Video
