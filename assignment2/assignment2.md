@@ -25,7 +25,7 @@ GCP, launched in 2008, is the third-largest cloud provider. It excels in data an
 
 ### RESTful API Services 
 
-|  | **Amazon API Gateway** (AWS, n.d.-a) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Google Cloud, n.d.) |
+|  | **Amazon API Gateway** (AWS, n.d.-a) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Apigee API Management, n.d.) |
 | :--- | :--- | :--- | :--- |
 | **Type** | Fully Managed API Gateway | Fully Managed API Gateway | Fully Managed API Gateway|
 | **Data Interface** | REST, WebSocket | REST, WebSocket, & GraphQL  | REST, SOAP, & GraphQL  |
@@ -33,7 +33,7 @@ GCP, launched in 2008, is the third-largest cloud provider. It excels in data an
 
 ### GraphQL Services
 
-| | **AWS AppSync** (AWS, n.d.-b) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Google Cloud, n.d.) |
+| | **AWS AppSync** (AWS, n.d.-b) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Apigee API Management, n.d.) |
 | :--- | :--- | :--- | :--- |
 | **Type** | **Managed GraphQL Service | Fully Managed API Gateway | Fully Managed API Gateway |
 | **Data Interface** | **GraphQL | REST, WebSocket, & GraphQL  | REST, SOAP, & GraphQL |
@@ -77,6 +77,8 @@ Summary of findings and overall recommendations
 I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and used Gemini to create table for me using data that I researched.
 
 ## References
+
+Apigee API Management. (n.d.). Google Cloud. https://cloud.google.com/apigee?hl=en
 
 AWS. (n.d.-a). Amazon API Gateway Features | API Management | Amazon Web Services. Amazon Web Services, Inc. https://aws.amazon.com/api-gateway/features/
 
