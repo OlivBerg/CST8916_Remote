@@ -2,8 +2,21 @@
 
 ## Executive Summary (10%)
 
-Brief overview of the comparison (200-300 words)
-Key findings and recommendations
+
+### Summary
+This report presents a comparative analysis of the three major cloud computing providers: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). The objective is to evaluate their capabilities across specific modern architectural patterns, including RESTful APIs, GraphQL, WebSocket communications, Data Streaming, and Stream Analysis. Through a review of service catalogues and documentation, this report assesses which provider offers the most robust solutions for real-time applications such as chat services, gaming, and financial trading.
+
+The analysis highlights that while all three providers offer functional solutions for these technologies, they cater to different organizational needs. AWS is identified as the market leader with the deepest service catalogue, making it a versatile choice for a wide range of companies from startups to enterprises. Microsoft Azure distinguishes itself through superior enterprise integration and strict compliance standards, positioning it as the optimal choice for large-scale organizations and government entities, particularly for real-time communication needs. GCP, while strong in analytics, relies more heavily on partnered integrations and presents a more fragmented user experience.
+
+### Key Findings and Recommendations:
+
+- Market Position: AWS leads in versatility and maturity, but Azure is the top contender for enterprise-grade security and compliance.
+
+- Service Parity: AWS and Azure are functionally very similar across API and streaming services.
+
+- User Experience: GCP lacks the centralized service hub found in competitors, making navigation more difficult.
+
+- Recommendation: For organizations prioritizing deep compliance frameworks and existing Microsoft integration, Azure is recommended. For those seeking maximum platform maturity and community support, AWS remains the standard.
 
 ## Introduction
 
@@ -43,10 +56,10 @@ GCP, launched in 2008, is the third-largest cloud provider. It excels in data an
 ### WebSocket Services
 
 
-|  | **Amazon API Gateway** (AWS, n.d.-a)| **Azure Web PubSub** (‌Azure Web PubSub – WebSocket Web Publishing, n.d.) | **Firebase Realtime Database** (Firebase, 2025) |
+|  | **Amazon API Gateway** (AWS, n.d.-a)| **Azure Web PubSub** (‌Azure Web PubSub – WebSocket Web Publishing, n.d.) | **Apigee API Management** (Apigee API Management, n.d.) |
 | :--- | :--- | :--- | :--- |
-| **Type** | **Fully Managed API Gateway** | **Dedicated Real-time Messaging Service** | **Backend-as-a-Service** |
-| **How it Handles WebSockets** | It acts as a managed service that sits between clients and your server.| It acts as a managed service that sits between clients and your server. | Clients subscribe to data paths in the DB. When data changes, Firebase automatically pushes the update to all connected clients via WebSockets. |
+| **Type** | **Managed GraphQL Service | Fully Managed API Gateway | Fully Managed API Gateway |
+| **How it Handles WebSockets** | It acts as a managed service that sits between clients and your server.| It acts as a managed service that sits between clients and your server. | It acts as a managed service that sits between clients and your server. |
 
 
 ### Data Streaming Services
@@ -64,19 +77,21 @@ GCP, launched in 2008, is the third-largest cloud provider. It excels in data an
 
 ### Use Case Analysis 
 
-Present two real-world scenarios for real-time applications
-Recommend the most suitable CSP for each with justification
-Consider: cost, performance, ease of integration, ecosystem
+According to all of the documentation I have read, the use case that comes up the most is a real-time chat service, live video games and finiancial services like live stock-exchanges. They all seem to be very well suited for all of these taskes, however I would argue that Azure is the better platform suited overall for real-time communication. AWS would be a second best as it does support an enterprise ecosystem but Azure/Microsoft does bring a big reputation in compliance and security. The real question here is the size of the company wishing to use a cloud service. AWS may attract more medium-large size companies but Azure may attract large companies and goverment institution making them a more prominent player. The overall ecosystem, I would argue that AWS and Azure are pretty close competitors and are very similar in features. GCP, on the other hand, seems to really a lot on partnered services complete these missing services. GCP was also very hard to navigate as it does not really have a centralized hub for all of their services. 
+
 
 ## Conclusion
 
-Summary of findings and overall recommendations
+Overall, the top three giants—AWS, Azure, and GCP—offer a comprehensive suite of services that convey to user needs ranging from basic RESTful systems to Stream Analytics. While all three providers possess the technical capability to handle core modern architectures like WebSockets and GraphQL, the choice of platform largely depends on organizational scale and ecosystem alignment.
 
+As highlighted in the analysis, Microsoft Azure emerges as the preferred choice for large-scale enterprises and government institutions, driven by its superior reputation in compliance, security, and seamless integration with existing Microsoft software. AWS remains a close competitor and market leader, offering a highly mature platform that is versatile enough for medium-to-large organizations. In contrast, while Google Cloud Platform offers specialized strengths in data handling, it currently faces challenges regarding user experience and service centralization compared to its competitors. Ultimately, while the feature sets are often comparable, the decision rests on whether an organization prioritizes the extensive service depth of AWS or the enterprise-ready compliance and real-time communication strengths of Azure.
 
 ## AI discloser
-I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and used Gemini to create table for me using data that I researched.
+I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and used Gemini to create table for me, using data that I researched.
 
 ## References
+
+API Gateway use cases - Amazon API Gateway. (2025). Amazon.com. https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-overview-developer-experience.html#api-gateway-overview-websocket
 
 Apigee API Management. (n.d.). Google Cloud. https://cloud.google.com/apigee?hl=en
 
@@ -105,5 +120,9 @@ Roosevelt_Abandy. (2022, August 24). The History of Microsoft Azure. TECHCOMMUNI
 sidramadoss. (2024, December 17). Introduction to azure stream analytics. Learn.microsoft.com. https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction
 
 Stevens, B. (2017, March 10). Google Cloud Platform: your Next home in the cloud. Google Cloud Blog; Google Cloud. https://cloud.google.com/blog/products/gcp/google-cloud-platform-your-next-home-in-the-cloud?hl=en
+
+Using WebSockets. (2025). Google Cloud Documentation. https://docs.cloud.google.com/apigee/docs/api-platform/develop/websocket-config
 ‌
 What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams. (n.d.). Docs.aws.amazon.com. https://docs.aws.amazon.com/streams/latest/dev/introduction.html
+
+yjin81. (n.d.). What is Azure Web PubSub service? Learn.microsoft.com. https://learn.microsoft.com/en-us/azure/azure-web-pubsub/overview
