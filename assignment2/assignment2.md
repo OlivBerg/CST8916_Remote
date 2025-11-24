@@ -2,11 +2,11 @@
 
 ## Executive Summary (10%)
 
-
 ### Summary
-This report presents a comparative analysis of the three major cloud computing providers: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). The objective is to evaluate their capabilities across specific modern architectural patterns, including RESTful APIs, GraphQL, WebSocket communications, Data Streaming, and Stream Analysis. Through a review of service catalogues and documentation, this report assesses which provider offers the most robust solutions for real-time applications such as chat services, gaming, and financial trading.
 
-The analysis highlights that while all three providers offer functional solutions for these technologies, they cater to different organizational needs. AWS is identified as the market leader with the deepest service catalogue, making it a versatile choice for a wide range of companies from startups to enterprises. Microsoft Azure distinguishes itself through superior enterprise integration and strict compliance standards, positioning it as the optimal choice for large-scale organizations and government entities, particularly for real-time communication needs. GCP, while strong in analytics, relies more heavily on partnered integrations and presents a more fragmented user experience.
+This report presents a comparative analysis of the three major cloud computing providers: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP) are evaluated for their capabilities across modern architectural patterns, including RESTful APIs, GraphQL, WebSocket communications, Data Streaming, and Stream Analysis. This report assesses which provider offers the most robust solutions for real-time applications such as chat services, gaming, and financial trading by reviewing their service catalogues and documentation.
+
+While all three providers offer functional solutions for these technologies, they cater to different organizational needs. AWS is the market leader with the deepest service catalogue, making it a versatile choice for companies of all sizes, from startups to enterprises. Microsoft Azure stands out through its superior enterprise integration and strict compliance standards, making it the optimal choice for large-scale organizations and government entities, particularly for real-time communication needs. GCP, while strong in analytics, relies more heavily on partnered integrations and presents a more fragmented user experience.
 
 ### Key Findings and Recommendations:
 
@@ -36,57 +36,56 @@ GCP, launched in 2008, is the third-largest cloud provider. It excels in data an
 
 ## Service Comparison
 
-### RESTful API Services 
+### RESTful API Services
 
-|  | **Amazon API Gateway** (AWS, n.d.-a) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Apigee API Management, n.d.) |
-| :--- | :--- | :--- | :--- |
-| **Type** | Fully Managed API Gateway | Fully Managed API Gateway | Fully Managed API Gateway|
-| **Data Interface** | REST, WebSocket | REST, WebSocket, & GraphQL  | REST, SOAP, & GraphQL  |
-
+|                    | **Amazon API Gateway** (AWS, n.d.-a) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Apigee API Management, n.d.) |
+| :----------------- | :----------------------------------- | :------------------------------------------- | :------------------------------------------------------ |
+| **Type**           | Fully Managed API Gateway            | Fully Managed API Gateway                    | Fully Managed API Gateway                               |
+| **Data Interface** | REST, WebSocket                      | REST, WebSocket, & GraphQL                   | REST, SOAP, & GraphQL                                   |
 
 ### GraphQL Services
 
-| | **AWS AppSync** (AWS, n.d.-b) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Apigee API Management, n.d.) |
-| :--- | :--- | :--- | :--- |
-| **Type** | **Managed GraphQL Service | Fully Managed API Gateway | Fully Managed API Gateway |
-| **Data Interface** | **GraphQL | REST, WebSocket, & GraphQL  | REST, SOAP, & GraphQL |
-
-
+|                    | **AWS AppSync** (AWS, n.d.-b) | **Azure API Management** (Microsoft, n.d.-a) | **Apigee API Management** (Apigee API Management, n.d.) |
+| :----------------- | :---------------------------- | :------------------------------------------- | :------------------------------------------------------ |
+| **Type**           | \*\*Managed GraphQL Service   | Fully Managed API Gateway                    | Fully Managed API Gateway                               |
+| **Data Interface** | \*\*GraphQL                   | REST, WebSocket, & GraphQL                   | REST, SOAP, & GraphQL                                   |
 
 ### WebSocket Services
 
-
-|  | **Amazon API Gateway** (AWS, n.d.-a)| **Azure Web PubSub** (‌Azure Web PubSub – WebSocket Web Publishing, n.d.) | **Apigee API Management** (Apigee API Management, n.d.) |
-| :--- | :--- | :--- | :--- |
-| **Type** | **Managed GraphQL Service | Fully Managed API Gateway | Fully Managed API Gateway |
-| **How it Handles WebSockets** | It acts as a managed service that sits between clients and your server.| It acts as a managed service that sits between clients and your server. | It acts as a managed service that sits between clients and your server. |
-
+|                               | **Amazon API Gateway** (AWS, n.d.-a)                                    | **Azure Web PubSub** (‌Azure Web PubSub – WebSocket Web Publishing, n.d.) | **Apigee API Management** (Apigee API Management, n.d.)                 |
+| :---------------------------- | :---------------------------------------------------------------------- | :------------------------------------------------------------------------ | :---------------------------------------------------------------------- |
+| **Type**                      | \*\*Managed GraphQL Service                                             | Fully Managed API Gateway                                                 | Fully Managed API Gateway                                               |
+| **How it Handles WebSockets** | It acts as a managed service that sits between clients and your server. | It acts as a managed service that sits between clients and your server.   | It acts as a managed service that sits between clients and your server. |
 
 ### Data Streaming Services
 
-| | **AWS**  | **Azure** | **GCP** (Dataflow overview, 2025) |
-| :--- | :--- | :--- | :--- |
-| **Stream Processing** | Amazon Kinesis Data Streams (What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams, n.d.) | Azure Stream Analytics (sidramadoss, 2024) | Dataflow |
-| **Data Ingestion** |  Amazon Kinesis Data Streams (What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams, n.d.) | Azure Event Hubs (Microsoft, n.d.-b) | Dataflow |
+|                       | **AWS**                                                                                                | **Azure**                                  | **GCP** (Dataflow overview, 2025) |
+| :-------------------- | :----------------------------------------------------------------------------------------------------- | :----------------------------------------- | :-------------------------------- |
+| **Stream Processing** | Amazon Kinesis Data Streams (What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams, n.d.) | Azure Stream Analytics (sidramadoss, 2024) | Dataflow                          |
+| **Data Ingestion**    | Amazon Kinesis Data Streams (What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams, n.d.) | Azure Event Hubs (Microsoft, n.d.-b)       | Dataflow                          |
 
-### Stream Analytics 
+### Stream Analytics
 
-|                   | **AWS**              | **Azure**                        | **GCP**            |
-| :-------------------------------- | :------------------- | :------------------------------- | :----------------- |
-| **Stream Analytics** | Amazon Kinesis Data Streams (What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams, n.d.) | Azure Stream Analytics (sidramadoss, 2024) | Dataflow (Dataflow overview, 2025)|
+|                      | **AWS**                                                                                                | **Azure**                                  | **GCP**                            |
+| :------------------- | :----------------------------------------------------------------------------------------------------- | :----------------------------------------- | :--------------------------------- |
+| **Stream Analytics** | Amazon Kinesis Data Streams (What Is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams, n.d.) | Azure Stream Analytics (sidramadoss, 2024) | Dataflow (Dataflow overview, 2025) |
 
-### Use Case Analysis 
+### Use Case Analysis
 
-According to all of the documentation I have read, the use case that comes up the most is a real-time chat service, live video games and finiancial services like live stock-exchanges. They all seem to be very well suited for all of these taskes, however I would argue that Azure is the better platform suited overall for real-time communication. AWS would be a second best as it does support an enterprise ecosystem but Azure/Microsoft does bring a big reputation in compliance and security. The real question here is the size of the company wishing to use a cloud service. AWS may attract more medium-large size companies but Azure may attract large companies and goverment institution making them a more prominent player. The overall ecosystem, I would argue that AWS and Azure are pretty close competitors and are very similar in features. GCP, on the other hand, seems to really a lot on partnered services complete these missing services. GCP was also very hard to navigate as it does not really have a centralized hub for all of their services. 
+Based on the documentation I’ve reviewed, the most common use case is real-time chat, live video games, and financial services like stock exchanges. These tasks are well-suited for both platforms, but I argue Azure is the better overall choice for real-time communication. AWS is a good second option as it supports an enterprise ecosystem, but Azure/Microsoft has a reputation for compliance and security. The size of the company using a cloud service is the key factor. AWS may attract medium-large companies, while Azure may attract large companies and government institutions, making it a more prominent player.
 
+In my opinion, AWS and Azure are quite close competitors and offer very similar features. GCP, on the other hand, relies heavily on partnered services to fill in the gaps. Additionally, GCP was quite difficult to navigate due to the lack of a centralized hub for all its services.
 
 ## Conclusion
 
-Overall, the top three giants—AWS, Azure, and GCP—offer a comprehensive suite of services that convey to user needs ranging from basic RESTful systems to Stream Analytics. While all three providers possess the technical capability to handle core modern architectures like WebSockets and GraphQL, the choice of platform largely depends on organizational scale and ecosystem alignment.
+Overall, the top three giants offer a comprehensive suite of services that convey to user needs ranging from basic RESTful systems to Stream Analytics. While all three providers possess the technical capability to handle core modern architectures like WebSockets and GraphQL, the choice of platform largely depends on organizational scale and ecosystem alignment.
 
-As highlighted in the analysis, Microsoft Azure emerges as the preferred choice for large-scale enterprises and government institutions, driven by its superior reputation in compliance, security, and seamless integration with existing Microsoft software. AWS remains a close competitor and market leader, offering a highly mature platform that is versatile enough for medium-to-large organizations. In contrast, while Google Cloud Platform offers specialized strengths in data handling, it currently faces challenges regarding user experience and service centralization compared to its competitors. Ultimately, while the feature sets are often comparable, the decision rests on whether an organization prioritizes the extensive service depth of AWS or the enterprise-ready compliance and real-time communication strengths of Azure.
+Azure emerges as the preferred choice for large-scale enterprises and government institutions, as highlighted in the analysis. This is due to its superior reputation in compliance, security, and seamless integration with existing Microsoft software. AWS remains a close competitor and market leader, offering a highly mature platform that is versatile enough for large organizations.
+
+In contrast, Google Cloud Platform offers specialized strengths in data handling. However, it currently faces challenges regarding user experience and service centralization compared to its competitors. Ultimately, the decision rests on whether an organization prioritizes the extensive service depth of AWS or the enterprise-ready compliance and real-time communication strengths of Azure.
 
 ## AI discloser
+
 I used the ProofRead WritingTool function on Mac to correct my grammar and sentence structures and used Gemini to create table for me, using data that I researched.
 
 ## References
